@@ -46,7 +46,7 @@ export const data = {
 };
 
 const ExpenseChartBar= () =>{
-    return <div className='col-md-6'><Bar options={options} data={data} /></div>
+    return <div className='col-md-6 card shadow'><Bar options={options} data={data} className='my-auto' /></div>
 }
 
 export default ExpenseChartBar

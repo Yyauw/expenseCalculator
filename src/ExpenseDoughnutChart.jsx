@@ -30,7 +30,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Monthly Expenses',
+      text: 'Years Expenses',
     },
   },
 };
@@ -57,8 +57,8 @@ export const data = {
 
 
 const ExpenseDoughnutChart = () =>{
-    return <div className="col-md-6" style={{width:'400px'}}>
-    <Pie data={data} options={options} />
+    return <div className="col-md-6 card shadow mx-auto mt-2 mt-md-0" style={{width:'400px'}}>
+    <Pie data={data} options={options}/>
     </div>
 }
 
