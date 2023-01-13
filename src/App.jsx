@@ -1,16 +1,18 @@
-import ExpenseChartBar from "./ExpenseChartBar"
-import ExpenseDoughnutChart from "./ExpenseDoughnutChart"
-import ExpenseListHeader from "./ExpenseListHeader"
+import ExpenseChartBar from "./components/ExpenseChartBar"
+import ExpenseDoughnutChart from "./components/ExpenseDoughnutChart"
+import ExpenseListHeader from "./components/ExpenseListHeader"
+import ExpenseList from "./components/ExpenseList"
 
 function App() {
   return (
   <div className='container'>
     <h1 className="text-center my-1">ExpenseCalculator</h1>
-    <div className="row">
+    <div className="ms-5 row">
     <ExpenseChartBar/>
     <ExpenseDoughnutChart />
     </div>
     <ExpenseListHeader/>
+    <ExpenseList />
   </div>)
 }
 
