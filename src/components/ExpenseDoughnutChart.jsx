@@ -35,28 +35,32 @@ export const options = {
   },
 };
 
-const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul','Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Expenses',
-      data: [123,435,446,1231,2323,2323,112,100,324,688,345,344,0,342],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-      ],
-    },
-  ],
-};
+const labels = ['2021','2022','2023','2024','2025'];
 
 
-const ExpenseDoughnutChart = () =>{
+
+
+const ExpenseDoughnutChart = (props) =>{
+  const yearData = props.data.map(el =>{
+    return el.value
+  })
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Expenses',
+        data: yearData,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ],
+      },
+    ],
+  };
     return <div className="col-md-6 card shadow mx-auto mt-2 mt-md-0" style={{width:'400px'}}>
     <Pie data={data} options={options}/>
     </div>

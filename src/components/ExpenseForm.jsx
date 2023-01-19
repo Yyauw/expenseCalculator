@@ -5,7 +5,7 @@ const ExpenseForm = (props) => {
     //console.log(event)
     const data = {
       title: event.target[0].value,
-      amount: event.target[1].value,
+      amount: +event.target[1].value,
       date: new Date(event.target[2].value),
       category: event.target[3].value,
     };
@@ -13,7 +13,6 @@ const ExpenseForm = (props) => {
     alert("Expense added!");
     props.dataToNewExpense(data);
     //for(let x =0; x < 2; x ++) event.target[x].value = '';
-    console.log(data);
   };
 
   return (

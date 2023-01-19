@@ -34,18 +34,22 @@ export const options = {
 
 const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul','Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Expenses',
-      data: [123,435,446,1231,2323,2323,112,100,324,688,345,344,0,342],
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-  ],
-};
 
-const ExpenseChartBar= () =>{
+
+const ExpenseChartBar= (props) =>{
+  const dataValue = props.data.map(el =>{
+    return el.value
+  })
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Expenses',
+        data: dataValue,
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+    ],
+  };
     return <div className='col-md-6 card shadow'><Bar options={options} data={data} className='my-auto' /></div>
 }
 
